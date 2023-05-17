@@ -82,8 +82,8 @@ function Main(props) {
         <Row style={{ marginBottom: '25px' }}>
           {productList.map((data, index) => {
             return (
-              <Col lg='4' className='product-1'>
-                <div className="item mx-2 box-background" >
+              <Col lg='4' className='product-1' key={index}>
+                <div className="item mx-2 box-background mt-2" >
                   <div class='carousel-product-card'>
                     <img src={data.image} alt='#' onClick={() => navigate(`/product/detail/${data?._id}`)} />
                     <p>{data.productName}</p>
@@ -100,9 +100,9 @@ function Main(props) {
         </Row>
 
       </Container>
-      <div className='d-flex justify-content-center align-items-center mb-5'>
+      {/* <div className='d-flex justify-content-center align-items-center mb-5'>
         <Pagination count={10} variant="outlined" shape="rounded" />
-      </div>
+      </div> */}
     </div >
   )
 }
